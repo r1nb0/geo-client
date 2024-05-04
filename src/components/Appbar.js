@@ -7,8 +7,14 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import PropTypes from 'prop-types';
 
 export default function Appbar({onAction}) {
+
+    AppBar.propTypes = {
+        onAction: PropTypes.func,
+    }
+
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [countryAnchorEl, setCountryAnchorEl] = React.useState(null);
     const [cityAnchorEl, setCityAnchorEl] = React.useState(null);
