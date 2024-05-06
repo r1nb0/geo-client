@@ -385,7 +385,7 @@ export default function CRUDCountry() {
                                                         </TableRow>
                                                     </TableHead>
                                                     <TableBody>
-                                                        {openCities && openCities.cities.map(value => (
+                                                        {openCities?.cities.map(value => (
                                                             <TableRow key={value.id}>
                                                                 <TableCell>{value.id}</TableCell>
                                                                 <TableCell>{value.name}</TableCell>
@@ -416,7 +416,7 @@ export default function CRUDCountry() {
                                                         </TableRow>
                                                     </TableHead>
                                                     <TableBody>
-                                                        {openLanguages && openLanguages.languages.map(value => (
+                                                        {openLanguages?.languages.map(value => (
                                                             <TableRow key={value.id}>
                                                                 <TableCell>{value.id}</TableCell>
                                                                 <TableCell>{value.name}</TableCell>
