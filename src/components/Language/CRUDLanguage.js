@@ -83,7 +83,7 @@ export default function CRUDLanguage() {
         let code = tempCode;
         const language = {id, name, code};
         fetch("http://localhost:8080/api/v1/languages/updateInfo", {
-                method:"PUT",
+            method:"PUT",
             headers: {"Content-Type":"application/json"},
             body:JSON.stringify(language)
         }).then(() => update())
