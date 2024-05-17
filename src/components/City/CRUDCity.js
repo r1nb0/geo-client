@@ -12,7 +12,7 @@ import {ArrowBack, ArrowForward} from "@mui/icons-material";
 export default function CRUDCity() {
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/v1/cities/all")
+        fetch("https://geodata-production.up.railway.app/api/v1/cities/all")
             .then(res => res.json())
             .then((result) => {
                     setCities(result);
@@ -21,7 +21,7 @@ export default function CRUDCity() {
     }, [])
 
     const update = (() => {
-        fetch("http://localhost:8080/api/v1/cities/all")
+        fetch("https://geodata-production.up.railway.app/api/v1/cities/all")
             .then(res => res.json())
             .then((result) => {
                     setCities(result);
@@ -59,7 +59,7 @@ export default function CRUDCity() {
         let latitude = newLatitude;
         const city = {name, countryName, latitude, longitude};
         console.log(city);
-        fetch("http://localhost:8080/api/v1/cities/create", {
+        fetch("https://geodata-production.up.railway.app/api/v1/cities/create", {
             method:"POST",
             headers: {"Content-Type":"application/json"},
             body:JSON.stringify(city)
@@ -86,7 +86,7 @@ export default function CRUDCity() {
         let longitude = tempLongitude;
         const city = {id, name, longitude, latitude}
         console.log(city);
-        fetch("http://localhost:8080/api/v1/cities/updateInfo", {
+        fetch("https://geodata-production.up.railway.app/api/v1/cities/updateInfo", {
             method:"PUT",
             headers: {"Content-Type":"application/json"},
             body:JSON.stringify(city)
@@ -119,7 +119,7 @@ export default function CRUDCity() {
     const paperStyle = {padding:'50px 20px', width:850, margin:"20px auto"};
     const [cities, setCities] = useState([]);
     const handleClick = (id) => {
-        fetch("http://localhost:8080/api/v1/cities/delete/" + id, {
+        fetch("https://geodata-production.up.railway.app/api/v1/cities/delete/" + id, {
             method: "DELETE",
             headers: {"Content-Type": "application/json"},
         }).then(update)

@@ -13,7 +13,7 @@ export default function CRUDLanguage() {
 
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/v1/languages/all")
+        fetch("https://geodata-production.up.railway.app/api/v1/languages/all")
             .then(res => res.json())
             .then((result) => {
                     setLanguages(result);
@@ -22,7 +22,7 @@ export default function CRUDLanguage() {
     }, [])
 
     const update = (() => {
-        fetch("http://localhost:8080/api/v1/languages/all")
+        fetch("https://geodata-production.up.railway.app/api/v1/languages/all")
             .then(res => res.json())
             .then((result) => {
                     setLanguages(result);
@@ -45,7 +45,7 @@ export default function CRUDLanguage() {
     const paperStyle = {padding:'50px 20px', width:800, margin:"20px auto"};
     const [languages, setLanguages] = useState([]);
     const handleClick = (id) => {
-        fetch("http://localhost:8080/api/v1/languages/delete/" + id, {
+        fetch("https://geodata-production.up.railway.app/api/v1/languages/delete/" + id, {
             method: "DELETE",
             headers: {"Content-Type": "application/json"},
         }).then(update)
@@ -63,7 +63,7 @@ export default function CRUDLanguage() {
         let name = newName;
         let code = newCode;
         const language = {name, code};
-        fetch("http://localhost:8080/api/v1/languages/create", {
+        fetch("https://geodata-production.up.railway.app/v1/languages/create", {
             method:"POST",
             headers: {"Content-Type":"application/json"},
             body:JSON.stringify(language)
@@ -82,7 +82,7 @@ export default function CRUDLanguage() {
         let name = tempName;
         let code = tempCode;
         const language = {id, name, code};
-        fetch("http://localhost:8080/api/v1/languages/updateInfo", {
+        fetch("https://geodata-production.up.railway.app/v1/languages/updateInfo", {
             method:"PUT",
             headers: {"Content-Type":"application/json"},
             body:JSON.stringify(language)

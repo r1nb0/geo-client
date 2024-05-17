@@ -13,7 +13,7 @@ export default function CRUDCountry() {
 
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/v1/countries/all")
+        fetch("https://geodata-production.up.railway.app/api/v1/countries/all")
             .then(res => res.json())
             .then((result) => {
                     setCountries(result);
@@ -22,7 +22,7 @@ export default function CRUDCountry() {
     }, [])
 
     const update = (() => {
-        fetch("http://localhost:8080/api/v1/countries/all")
+        fetch("https://geodata-production.up.railway.app/api/v1/countries/all")
             .then(res => res.json())
             .then((result) => {
                     setCountries(result);
@@ -69,7 +69,7 @@ export default function CRUDCountry() {
     const paperStyle = {padding:'50px 20px', width:1100, margin:"20px auto"};
     const [countries, setCountries] = useState([]);
     const handleClick = (id) => {
-        fetch("http://localhost:8080/api/v1/countries/delete/" + id, {
+        fetch("https://geodata-production.up.railway.app/api/v1/countries/delete/" + id, {
             method: "DELETE",
             headers: {"Content-Type": "application/json"},
         }).then(update)
@@ -86,7 +86,7 @@ export default function CRUDCountry() {
         let id = countryIdAddLang;
         let languages = [addLanguageName];
         const countryDTO = {id, languages};
-        fetch("http://localhost:8080/api/v1/countries/addLanguages", {
+        fetch("https://geodata-production.up.railway.app/api/v1/countries/addLanguages", {
             method:"PUT",
             headers: {"Content-Type":"application/json"},
             body:JSON.stringify(countryDTO)
@@ -118,7 +118,7 @@ export default function CRUDCountry() {
         let latitude = newLatitude;
         const country = {name, nationality, latitude, longitude};
         console.log(country);
-        fetch("http://localhost:8080/api/v1/countries/create", {
+        fetch("https://geodata-production.up.railway.app/api/v1/countries/create", {
             method:"POST",
             headers: {"Content-Type":"application/json"},
             body:JSON.stringify(country)
@@ -150,7 +150,7 @@ export default function CRUDCountry() {
         let id = openLanguages.id;
         const countryDTO = {id, languages}
         console.log(countryDTO);
-        fetch("http://localhost:8080/api/v1/countries/removeLanguages", {
+        fetch("https://geodata-production.up.railway.app/api/v1/countries/removeLanguages", {
             method: "PUT",
             headers: {"Content-Type": "application/json"},
             body:JSON.stringify(countryDTO)
@@ -166,7 +166,7 @@ export default function CRUDCountry() {
         let latitude = newLatitude;
         const countryDTO = {id, name, nationality, latitude, longitude};
         console.log(countryDTO);
-        fetch("http://localhost:8080/api/v1/countries/updateInfo", {
+        fetch("https://geodata-production.up.railway.app/api/v1/countries/updateInfo", {
             method:"PUT",
             headers: {"Content-Type":"application/json"},
             body:JSON.stringify(countryDTO)
