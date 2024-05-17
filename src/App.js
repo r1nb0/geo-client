@@ -17,7 +17,7 @@ function App() {
         <div className="App">
             <Appbar onAction = {handleAction}/>
             {/*{numAction === "CRUD_COUNTRY" && <CRUDCountry/>}*/}
-            {numAction === "CRUD_CITY" && <CRUDCity/>}
+            {/*{numAction === "CRUD_CITY" && <CRUDCity/>}*/}
             {/*{numAction === "CRUD_LANGUAGE" && <CRUDLanguage/>}*/}
         </div>
     )
