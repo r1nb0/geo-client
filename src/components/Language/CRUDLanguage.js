@@ -63,7 +63,7 @@ export default function CRUDLanguage() {
         let name = newName;
         let code = newCode;
         const language = {name, code};
-        fetch("https://geodata-production.up.railway.app/v1/languages/create", {
+        fetch("https://geodata-production.up.railway.app/api/v1/languages/create", {
             method:"POST",
             headers: {"Content-Type":"application/json"},
             body:JSON.stringify(language)
@@ -82,7 +82,7 @@ export default function CRUDLanguage() {
         let name = tempName;
         let code = tempCode;
         const language = {id, name, code};
-        fetch("https://geodata-production.up.railway.app/v1/languages/updateInfo", {
+        fetch("https://geodata-production.up.railway.app/api/v1/languages/updateInfo", {
             method:"PUT",
             headers: {"Content-Type":"application/json"},
             body:JSON.stringify(language)

@@ -160,10 +160,10 @@ export default function CRUDCountry() {
     const handleAccept = (e) => {
         e.preventDefault();
         let id = editing;
-        let name = newName;
-        let nationality = newNationality;
-        let longitude = newLongitude;
-        let latitude = newLatitude;
+        let name = tempName;
+        let nationality = tempNationality;
+        let longitude = tempLongitude;
+        let latitude = tempLatitude;
         const countryDTO = {id, name, nationality, latitude, longitude};
         console.log(countryDTO);
         fetch("https://geodata-production.up.railway.app/api/v1/countries/updateInfo", {
